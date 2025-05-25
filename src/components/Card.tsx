@@ -1,6 +1,12 @@
 import React from 'react';
 
-const Card = ({ name, email, id }) => {
+interface CardProps {
+  name: string;
+  email: string;
+  id: number;
+}
+
+const Card: React.FC<CardProps> = ({ name, email, id }) => {
   return (
     <div className='tc grow bg-light-yellow br3 pa3 ma2 dib bw2 shadow-5'>
       <img alt='robots' src={`https://robohash.org/${id}?size=200x200`} />
@@ -10,6 +16,6 @@ const Card = ({ name, email, id }) => {
       </div>
     </div>
   );
-}
+};
 
 export default Card;
